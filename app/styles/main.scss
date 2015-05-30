@@ -1,0 +1,27 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+html, body{
+  height: 100%;
+}
+
+
+
+.table{
+  background: #1F8C35;
+  height: 100%;
+}
+
+.player-zone{
+  border: 5px solid black;
+  height: 50%;
+}
+
+.player-info{
+  background: white;
+  padding: 1rem;
+}
