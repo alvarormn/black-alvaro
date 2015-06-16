@@ -2,30 +2,43 @@
 // A $( document ).ready() block.
 $(document).ready(function() {
 
-  var $stopBtn = $('#stop-btn'),
+  var $giveToP1 = $('#give-to-player-1-btn'),
     $giveToP2 = $('#give-to-player-2-btn');
 
-  $stopBtn.click(function(){
-    var givenCard = giveCard(hand1);
-    console.log(givenCard);
-    $('#card-zone-casino').append(givenCard.value, givenCard.type);
-    var cardValues = $('#cards-values-casino').text();
-    cardValues = parseInt(cardValues) + givenCard.value;
-    console.log(cardValues);
 
-    $('#cards-values-casino').text(cardValues);
-  });
 
-  $giveToP2.click(function(){
-    var givenCard = giveCard(hand2);
-    console.log(givenCard);
-    $('#card-zone-player').append(givenCard.value, givenCard.type);
-    var cardValues = $('#cards-values-player').text();
-    cardValues = parseInt(cardValues) + givenCard.value;
-    console.log(cardValues);
+  
 
-    $('#cards-values-player').text(cardValues);
-  });
+    $giveToP1.click(function(){
+      var cardValues = $('#cards-values-casino').text();
+      if (cardValues <= 21){
+        var givenCard = giveCard(hand1);
+        console.log(givenCard);
+        $('#card-zone-casino').append(givenCard.value, givenCard.type);
+        
+        cardValues = parseInt(cardValues) + givenCard.value;
+        console.log(cardValues);
+
+        $('#cards-values-casino').text(cardValues);
+      }
+    });
+
+
+
+
+    $giveToP2.click(function(){
+      var cardValues = $('#cards-values-player').text();
+      if (cardValues <= 21){
+        var givenCard = giveCard(hand2);
+        console.log(givenCard);
+        $('#card-zone-player').append(givenCard.value, givenCard.type);
+        var cardValues = $('#cards-values-player').text();
+        cardValues = parseInt(cardValues) + givenCard.value;
+        console.log(cardValues);
+        $('#cards-values-player').text(cardValues);
+      }
+    });
+   
 
   var casinoName = 'Croupier',
     playerName = 'Avaró';
