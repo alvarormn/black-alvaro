@@ -11,11 +11,10 @@ $(document).ready(function() {
 
     $giveToP1.click(function(){
       var cardValues = $('#cards-values-casino').text();
-      if (cardValues <= 21){
+      if (cardValues < 21){
         var givenCard = giveCard(hand1);
         console.log(givenCard);
-        $('#card-zone-casino').append(givenCard.value, givenCard.type);
-        
+        $('#card-zone-casino').text(givenCard.value + givenCard.type);
         cardValues = parseInt(cardValues) + givenCard.value;
         console.log(cardValues);
 
@@ -28,10 +27,10 @@ $(document).ready(function() {
 
     $giveToP2.click(function(){
       var cardValues = $('#cards-values-player').text();
-      if (cardValues <= 21){
+      if (cardValues < 21){
         var givenCard = giveCard(hand2);
         console.log(givenCard);
-        $('#card-zone-player').append(givenCard.value, givenCard.type);
+        $('#card-zone-player').text(givenCard.value + givenCard.type);
         var cardValues = $('#cards-values-player').text();
         cardValues = parseInt(cardValues) + givenCard.value;
         console.log(cardValues);
